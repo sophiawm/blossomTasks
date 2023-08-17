@@ -1,0 +1,20 @@
+{
+  "name": "index",
+  "version": "1.0.0",
+  "description": "index app",
+  "main": "index",
+  "scripts": {
+    "test": "index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "blossomTasks"
+  },
+  "keywords": [
+    "To",
+    "Do",
+    "List"
+  ],
+  "author": "Claudia Sophia Wong",
+  "license": "ISC"
+}
