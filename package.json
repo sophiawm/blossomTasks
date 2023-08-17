@@ -16,5 +16,8 @@
     "List"
   ],
   "author": "Claudia Sophia Wong",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "node-test": "^1.4.6"
+  }
 }
