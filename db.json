@@ -8,4 +8,11 @@
     "profile": {
       "name": "typicode"
     }
+
+    "task": {
+        {
+            "id": 2,
+            "task": "Homework"
+        }
+    }
   }
