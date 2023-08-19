@@ -1,0 +1,104 @@
+/* Variables */
+:root {
+	--primary: #FAD430;
+	--business: #FAD430;
+	--personal: var(--primary);
+	--light: #FFFFFF;
+	--grey: #888;
+	--dark: #3B0F52;
+	--danger: #ff5b57;
+
+	--shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+}
+
+
+/* Resets */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Work Sans', sans-serif;
+}
+input:not([type="radio"]):not([type="checkbox"]), button {
+	appearance: none;
+	border: none;
+	outline: none;
+	background: none;
+	cursor: initial;
+}
+
+
+/* Design */
+body {
+	background: var(--light);
+	color: var(--dark);
+}
+asection {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+}
+.basic-header{
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+	padding-right: 1.5rem;
+    width: 100vw;
+}
+.title{
+    display: inline-flex;
+    align-self: auto;
+    font-size: 1.5rem;
+    font-weight: 400;
+    width: 50%;
+}
+#name {
+	color: var(--dark);
+	font-size: 1.5rem;
+	font-weight: 400;
+}
+.nav-container{
+    display: inline-flex;
+    align-self: auto;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    cursor: pointer;
+}
+.dropbtn img {
+    height: 1rem;
+}
+.dropbtn:hover, .dropbtn:focus {
+    cursor: pointer;
+}
+.nav-container {
+position: relative;
+display: inline-block;
+}
+.style-menu {
+display: none;
+position: absolute;
+background-color: #f1f1f1;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+.style-menu a {
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+
+/* Change color of dropdown links on hover */
+.style-menu a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
