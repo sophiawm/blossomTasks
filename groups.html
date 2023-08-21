@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form class="new-group-form">   
+        <h3 class="group-title">Groups</h4>
+        <div class="group-options">
+            <label>
+                <input type="radio" name="category" id="category1" value="business" /> 
+                <span class="bubble business"></span>
+                <div>Business</div>
+            </label>
+            <label>
+                <input type="radio" name="category" id="category2" value="personal" />
+                <span class="bubble personal"></span>
+                <div>Personal</div>
+            </label>
+        </div>
+        <label>category<input mbsc-input id="group-input" data-dropdown="true" data-tags="true" /></label>
+        <select id="groups" multiple>
+            <option value="1">Books</option>
+            <option value="2">Movies</option>
+            <option value="3">Electronics</option>
+        </select>
+    </form>
+</body>
+</html>

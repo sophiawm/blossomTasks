@@ -17,9 +17,9 @@
                 <div class="greeting-name">
                     <p>Hello, </p><p class="name-user-welcome">Sunshine</p>
                 </div>
-                <div class="nav-container">
-                    <button onclick="dropdownMenu()" class="dropbtn"><img src="images/icons/toggle-icon.png" alt="Toggle Icon"></button>
-                    <ul id="myDropdown" class="style-menu">
+                <div class="nav-container" class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn"><img src="images/icons/toggle-icon.png" alt="Toggle Icon"></button>
+                    <ul id="myDropdown" class="dropdown-content">
                         <li><a href="#">Today's Taks</a></li>
                         <li><a href="#">Groups</a></li>
                         <li><a href="#">Habits</a></l>
@@ -80,28 +80,22 @@
             </form>
 		</section>
 		<!-- End of Todo List -->
-        <form class="new-group-form">   
-            <h3 class="group-title">Groups</h4>
-            <div class="group-options">
-                <label>
-                    <input type="radio" name="category" id="category1" value="business" /> 
-                    <span class="bubble business"></span>
-                    <div>Business</div>
-                </label>
-                <label>
-                    <input type="radio" name="category" id="category2" value="personal" />
-                    <span class="bubble personal"></span>
-                    <div>Personal</div>
-                </label>
-            </div>
-            <label>category<input mbsc-input id="group-input" data-dropdown="true" data-tags="true" /></label>
-            <select id="groups" multiple>
-                <option value="1">Books</option>
-                <option value="2">Movies</option>
-                <option value="3">Electronics</option>
-            </select>
-        </form>
 	</main>
+    <footer clas="basic-footer">
+        <div class="footer-logo-container">
+            <img id="logo-footer" src="images/desktop-logo-footer.png" alt="Basic Logo for Footer">
+        </div>
+        <div class="footer-nav-container-general">
+            <div class="footer-nav-container-left">
+                <a href="#"><img id="footer-menu-icon"src="images/icons/coffe-icon.png" alt="Today Icon"></a>
+                <a href="#"><img id="footer-menu-icon"src="images/icons/projects-icon.png" alt="Projects Icon"></a>
+            </div>
+            <div class="footer-nav-container-right">
+                <a href="#"><img id="footer-menu-icon"src="images/icons/garden-icon.png" alt="Garden Icon"></a>
+                <a href="#"><img id="footer-menu-icon"src="images/icons/face-icon.png" alt="User Icon"></a>
+            </div>
+        </div>
+    </footer>
     <script src="javascript/script-main.js"></script>
 </body>
 </html>
