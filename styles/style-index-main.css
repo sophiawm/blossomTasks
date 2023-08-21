@@ -20,7 +20,7 @@
 	box-sizing: border-box;
 	font-family: 'Work Sans', sans-serif;
 }
-input:not([type="radio"]):not([type="checkbox"]), button {
+input:not([type="checkbox"]):not([type="checkbox"]), button {
 	appearance: none;
 	border: none;
 	outline: none;
@@ -45,13 +45,13 @@ asection {
     flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
-    margin-top: 1.5rem;
-    margin-bottom: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
     padding-left: 1.5rem;
 	padding-right: 1.5rem;
     width: 100vw;
 }
-.title{
+.greeting-name{
     display: inline-flex;
     align-self: auto;
     font-size: 1.5rem;
@@ -102,3 +102,34 @@ display: block;
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
+
+/* Phrase display */
+.phrases {
+	background-color: #7E936D;
+	border-radius: 0.625rem;
+	margin: 1rem;
+	height: 11.25rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#phrases-text {
+	display: inline-block;
+	text-align: center;
+	padding: 2rem 1.7rem;
+	background-color: #3B0F52;
+	max-width: 20.125rem;
+	border-radius: 0.625rem;
+	color: #ffffff;
+	font-family: 'Cormorant Garamond';
+	font-size: 2.5rem;
+	font-style: italic;
+	font-weight: 700;
+	line-height: normal;
+	line-break:normal;
+	content: "\a";
+    white-space: pre-wrap;
+}
+.change-phrases{
+	height: 1rem;
+}

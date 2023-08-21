@@ -14,7 +14,7 @@
 	<main class="app">
 		<!-- Greeting -->
         <header class="basic-header">
-                <div class="title">
+                <div class="greeting-name">
                     <p>Hello, </p><input type="text" id="name" placeholder="Name"/>
                 </div>
                 <div class="nav-container">
@@ -31,16 +31,13 @@
 		<!-- End of Menu -->
 		<!-- Phrases -->
         <div class="phrases">
-            <input 
-            id="phrases"
-            type="text" 
-            placeholder="Your are always worthy"
-            name="phrases"/>
+            <p id="phrases-text">You are always worthy</p>
+            <button class="change-phrases"></button>
         </div>
 		<!-- End of Phrases -->
 		<!-- Todo List -->+
 		<section class="todo-list">
-			<h3 class="todays-list">Today's Tasks</h3>
+			<h3 class="todays-title">Today's Tasks</h3>
 			<div class="list" id="todo-list"></div>
 		</section>
 
@@ -60,9 +57,8 @@
                 <select id="groups" name="groups"></select>
 				<input class="add-todo" type="submit" value="Add todo" />
             </form>
-
             <form id="new-group-form">   
-                <h4>Groups</h4>
+                <h3 class="group-title">Groups</h4>
 				<div class="group-options">
 					<label>
 						<input type="radio" name="category" id="category1" value="business" /> 
