@@ -167,7 +167,7 @@ body {
 	font-size: 1.2rem;
 	padding: 2rem 0rem 0rem;
 }
-.list-container {
+.list-item-container {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -184,8 +184,7 @@ body {
 	background-color: #3B0F52;
 	color: white;
 	font-family: 'Work Sans';
-	margin:0rem;
-	padding: 1rem;
+	margin:1rem;
 	z-index: 2;
 }
 #todo-first-line{
@@ -202,7 +201,7 @@ body {
 	margin: 1rem;
 	gap: 0.5rem;
 }
-.container {
+.checkbox-container {
 	display: block;
 	position: relative;
 	padding-left: 35px;
@@ -216,7 +215,7 @@ body {
 }
 
 /* Custom checkbox */
-.container input {
+.checkbox-container input {
 	position: absolute;
 	opacity: 0;
 	cursor: pointer;
@@ -232,10 +231,10 @@ body {
 	background-color: #ffffff;
 	border-radius: 0.2rem;
 }
-.container:hover input ~ .checkmark {
+.checkbox-container:hover input ~ .checkmark {
 	background-color: #ffffff;
 }
-.container input:checked ~ .checkmark {
+.checkbox-container input:checked ~ .checkmark {
 	background-color: #FAD430;
 	border-radius: 0.2rem;
 }
@@ -244,10 +243,10 @@ body {
 	position: absolute;
 	display: none;
 }
-.container input:checked ~ .checkmark:after {
+.checkbox-container input:checked ~ .checkmark:after {
 	display: block;
 }
-.container .checkmark:after {
+.checkbox-container .checkmark:after {
 	left: 9px;
 	top: 5px;
 	width: 5px;
@@ -258,11 +257,21 @@ body {
 	-ms-transform: rotate(45deg);
 	transform: rotate(45deg);
 } 
-#description{
+#description-item-text{
 	display: block;
+	width: auto;
 	margin: 0.5rem 1rem 1rem;
 	font-family: 'Work Sans';
 	font-size: 1rem;
+}
+#group-task-item{
+	border-radius: 0.3rem;
+	background-color: #FAD430;
+	padding: 0.3rem 0.5rem;
+	margin: 0.5rem 1rem 1rem;
+	font-size: 0.8rem;
+	color:#3B0F52;
+	width: fit-content;
 }
 #todo-line-icons{
 	display: flex;
@@ -307,6 +316,13 @@ body {
 	font-size: 1rem;
 	font-weight: 700;
 	color: #FFF;
+}
+#msg-task-form{
+	height: fit-content;
+	font-size: 1rem;
+	font-weight: 200;
+	color: #FAD430;
+	margin: 0rem 5%;
 }
 #description-form, #description-form::placeholder{
 	font-size: 0.9rem;

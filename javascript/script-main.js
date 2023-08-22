@@ -23,6 +23,8 @@ let groupSelection = document.getElementById("group-options");
 let msgTaskInput = document.getElementById("msg-task-form");
 let addToDoBotton = document.getElementById("add-todo");
 
+let tasks = document.getElementById("list-container");
+
 
 taskForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -52,5 +54,29 @@ let acceptData = () => {
     data["text"] = textInput.value;
     data["description"] = descriptionInput.value;
     data["group"] = groupSelection.value;
-    console.log(data);
+    createTasks();
+};
+
+let createTasks = () => {
+    tasks.innerHTML += `
+    <div class="list-item-container">
+    <div id="list-box-structure">
+        <div id="todo-first-line">
+            <div id="todo-line-task">
+                <label class="checkbox-container">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+                <h4 id="task-item-text">${data.text}</h4>
+            </div>
+        </div>
+        <p id="description-item-text">${data.description}</p>
+        <p id="group-task-item">${data.group}</p>
+    </div>
+    <div id="todo-line-icons"> 
+        <img id="edit-icon" src="images/icons/edit-icon.png" alt="edit-icon">
+        <img id="delete-icon" src="images/icons/delete-icon.png" alt="delete-icon">
+    </div>
+</div>
+`;
 };

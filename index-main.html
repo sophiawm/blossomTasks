@@ -39,22 +39,25 @@
 		<!-- Todo List -->
 		<section class="todo-list">
 			<h3 class="todays-title">Today's Tasks</h3>
-			<div class="list-container">
-                <div id="list-box-structure">
-                    <div id="todo-first-line">
-                        <div id="todo-line-task">
-                            <label class="container">
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                            <h4 id="task">Organize my day</h4>
+            <div id="list-container">
+			    <div class="list-item-container">
+                    <div id="list-box-structure">
+                        <div id="todo-first-line">
+                            <div id="todo-line-task">
+                                <label class="checkbox-container">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <h4 id="task-item-text">Organize my day</h4>
+                            </div>
                         </div>
+                        <p id="description-item-text">Write a description</p>
+                        <p id="group-task-item">Work</p>
                     </div>
-                    <p id="description">Write a description</p>
-                </div>
-                <div id="todo-line-icons"> 
-                    <img id="edit-icon" src="images/icons/edit-icon.png" alt="edit-icon">
-                    <img id="delete-icon" src="images/icons/delete-icon.png" alt="delete-icon">
+                    <div id="todo-line-icons"> 
+                        <img id="edit-icon" src="images/icons/edit-icon.png" alt="edit-icon">
+                        <img id="delete-icon" src="images/icons/delete-icon.png" alt="delete-icon">
+                    </div>
                 </div>
             </div>
 		</section>
@@ -65,16 +68,16 @@
                 id="task-form"
                 type="text" 
                 placeholder="¿What are you planning?"
-                name="task-form"/></br><p id="msg-task-form"></p>
+                name="task-form"/><p id="msg-task-form"></p>
                 <input 
                 id="description-form"
                 type="text" 
                 placeholder="Write a description"
                 name="description-form"/>
                 <select id="group-options" class="group-selector">
-                    <option value="label">Select a group</option>
-                    <option value="group 1">Launch Website</option>
-                    <option value="group 2">Organize Homework</option>
+                    <option value="Today">Select a group</option>
+                    <option value="Launch Website">Launch Website</option>
+                    <option value="Organize Homework">Organize Homework</option>
                 </select>
 				<button type="submit" id="add-todo"> Add To Do</button>
             </form>
