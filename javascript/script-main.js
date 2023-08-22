@@ -1,15 +1,8 @@
-mobiscroll.select('#multiple-select', {
-    inputElement: document.getElementById('my-input'),
-    touchUi: false
-});
-
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function myFunction() {
+/*  Dropdown menu */
+function dropdownMenu() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
 
-// Close the dropdown menu if the user clicks outside of it
 window.onclick = function(event) {
 if (!event.target.matches('.dropbtn')) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -22,3 +15,42 @@ if (!event.target.matches('.dropbtn')) {
     }
 }
 }
+/* Form connection */
+let taskForm = document.getElementById("new-todo-form");
+let textInput = document.getElementById("task-form");
+let descriptionInput = document.getElementById("description-form");
+let groupSelection = document.getElementById("group-options");
+let msgTaskInput = document.getElementById("msg-task-form");
+let addToDoBotton = document.getElementById("add-todo");
+
+
+taskForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    taskFormValidation();
+});
+
+let taskFormValidation = () => {
+    if (textInput.value === "") {
+        console.log("failure");
+        msgTaskInput.innerHTML = "Task cannot be blank";
+    } else {
+        console.log("success");
+        msgTaskInput.innerHTML = "";
+        acceptData();
+    }
+};
+
+    /*const groupOption = groupSelection.options[groupSelection.selectedIndex];
+    const attrsOption = groupOption.attributes;
+    data["group"] = attrsOption;
+    */
+
+
+let data = {};
+
+let acceptData = () => {
+    data["text"] = textInput.value;
+    data["description"] = descriptionInput.value;
+    data["group"] = groupSelection.value;
+    console.log(data);
+};

@@ -18,7 +18,7 @@
                     <p>Hello, </p><p class="name-user-welcome">Sunshine</p>
                 </div>
                 <div class="nav-container" class="dropdown">
-                    <button onclick="myFunction()" class="dropbtn"><img src="images/icons/toggle-icon.png" alt="Toggle Icon"></button>
+                    <button onclick="dropdownMenu()" class="dropbtn"><img src="images/icons/toggle-icon.png" alt="Toggle Icon"></button>
                     <ul id="myDropdown" class="dropdown-content">
                         <li><a href="#">Today's Taks</a></li>
                         <li><a href="#">Groups</a></li>
@@ -65,18 +65,18 @@
                 id="task-form"
                 type="text" 
                 placeholder="¿What are you planning?"
-                name="task"/>
+                name="task-form"/></br><p id="msg-task-form"></p>
                 <input 
                 id="description-form"
                 type="text" 
                 placeholder="Write a description"
-                name="description"/>
+                name="description-form"/>
                 <select id="group-options" class="group-selector">
                     <option value="label">Select a group</option>
                     <option value="group 1">Launch Website</option>
                     <option value="group 2">Organize Homework</option>
                 </select>
-				<input id="add-todo" type="submit" value="Add To Do" />
+				<button type="submit" id="add-todo"> Add To Do</button>
             </form>
 		</section>
 		<!-- End of Todo List -->

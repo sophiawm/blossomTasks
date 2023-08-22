@@ -6,26 +6,32 @@
     <title>Document</title>
 </head>
 <body>
-    <form class="new-group-form">   
-        <h3 class="group-title">Groups</h4>
-        <div class="group-options">
-            <label>
-                <input type="radio" name="category" id="category1" value="business" /> 
-                <span class="bubble business"></span>
-                <div>Business</div>
-            </label>
-            <label>
-                <input type="radio" name="category" id="category2" value="personal" />
-                <span class="bubble personal"></span>
-                <div>Personal</div>
-            </label>
-        </div>
-        <label>category<input mbsc-input id="group-input" data-dropdown="true" data-tags="true" /></label>
-        <select id="groups" multiple>
-            <option value="1">Books</option>
-            <option value="2">Movies</option>
-            <option value="3">Electronics</option>
-        </select>
-    </form>
+    <!-- Create group -->  
+        <section class="create-todo">
+			<form id="new-group-form">
+                <input 
+                id="group-name-form"
+                type="text" 
+                placeholder="¿What's your next project?"
+                name="task"/> <p id="msg-group-form"></p>
+                <input 
+                id="group-description-form"
+                type="text" 
+                placeholder="Write a description"
+                name="description-group"/>
+                <input 
+                id="group-duedate-form"
+                type="date" 
+                placeholder=""
+                name="due-group"/>
+				<input id="add-todo" type="submit" value="Add To Do" />
+            </form>
+		</section>
+    <!-- Select group -->
+    <select id="group-options" class="group-selector">
+        <option value="label">Select a group</option>
+        <option value="group 1">Launch Website</option>
+        <option value="group 2">Organize Homework</option>
+    </select>
 </body>
 </html>
