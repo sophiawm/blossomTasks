@@ -55,28 +55,37 @@ let acceptData = () => {
     data["description"] = descriptionInput.value;
     data["group"] = groupSelection.value;
     createTasks();
+    add-todo.setAttribute
 };
 
 let createTasks = () => {
     tasks.innerHTML += `
     <div class="list-item-container">
-    <div id="list-box-structure">
-        <div id="todo-first-line">
-            <div id="todo-line-task">
-                <label class="checkbox-container">
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
-                </label>
-                <h4 id="task-item-text">${data.text}</h4>
+        <div id="list-box-structure">
+            <div id="todo-first-line">
+                <div id="todo-line-task">
+                    <label class="checkbox-container">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <h4 id="task-item-text">${data.text}</h4>
+                </div>
             </div>
+            <p id="description-item-text">${data.description}</p>
+            <p id="group-task-item">${data.group}</p>
         </div>
-        <p id="description-item-text">${data.description}</p>
-        <p id="group-task-item">${data.group}</p>
+        <div id="todo-line-icons"> 
+            <img id="edit-icon" src="images/icons/edit-icon.png" alt="edit-icon">
+            <img id="delete-icon" src="images/icons/delete-icon.png" alt="delete-icon">
+        </div>
     </div>
-    <div id="todo-line-icons"> 
-        <img id="edit-icon" src="images/icons/edit-icon.png" alt="edit-icon">
-        <img id="delete-icon" src="images/icons/delete-icon.png" alt="delete-icon">
-    </div>
-</div>
-`;
+    `;
+    
+    resetForm();
 };
+
+let resetForm = ()=>{
+    textInput.value = textInput.placeholder;
+    descriptionInput.value  = descriptionInput.placeholder;
+    groupSelection.value  = " ";
+}
