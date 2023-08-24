@@ -1,20 +1,4 @@
-{
-"task"[
-  {
-    "id": " ",
-    "titleTask": " ",
-    "descriptionTask": " ",
-    "group": "",
-  }
-],
-"group"[
-  {
-    "id": " ",
-    "titleGroup": " ",
-    "descriptionGroup": " ",
-    "dueDate": "",
-  }
-],
+{ 
 }
 
 
