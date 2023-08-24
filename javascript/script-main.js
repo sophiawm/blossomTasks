@@ -1,20 +1,6 @@
-/*  Dropdown menu */
-function dropdownMenu() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
 
-window.onclick = function(event) {
-if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-    var openDropdown = dropdowns[i];
-    if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-    }
-    }
-}
-}
+
+
 /* Form connection */
 let taskForm = document.getElementById("new-todo-form");
 let textInput = document.getElementById("task-form");
@@ -55,7 +41,6 @@ let acceptData = () => {
     data["description"] = descriptionInput.value;
     data["group"] = groupSelection.value;
     createTasks();
-    add-todo.setAttribute
 };
 
 let createTasks = () => {
@@ -63,20 +48,18 @@ let createTasks = () => {
     <div class="list-item-container">
         <div id="list-box-structure">
             <div id="todo-first-line">
-                <div id="todo-line-task">
-                    <label class="checkbox-container">
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                    </label>
-                    <h4 id="task-item-text">${data.text}</h4>
-                </div>
+                <label class="checkbox-container">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+                <h4 id="task-item-text">${data.text}</h4>
             </div>
             <p id="description-item-text">${data.description}</p>
             <p id="group-task-item">${data.group}</p>
         </div>
         <div id="todo-line-icons"> 
             <img id="edit-icon" src="images/icons/edit-icon.png" alt="edit-icon">
-            <img id="delete-icon" src="images/icons/delete-icon.png" alt="delete-icon">
+            <img onclick="deleteTask(this)" id="delete-icon" src="images/icons/delete-icon.png" alt="delete-icon">
         </div>
     </div>
     `;
@@ -84,8 +67,31 @@ let createTasks = () => {
     resetForm();
 };
 
+let deleteTask = (e) =>{
+    e.parentElement.parentElement.remove();
+};
+
 let resetForm = ()=>{
     textInput.value = textInput.placeholder;
     descriptionInput.value  = descriptionInput.placeholder;
     groupSelection.value  = " ";
-}
+};
+
+
+/*  Dropdown menu */
+function dropdownMenu() {
+    document.getElementById("myDropdown").classList.toggle("show");
+};
+
+window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+        }
+        }
+    }
+};

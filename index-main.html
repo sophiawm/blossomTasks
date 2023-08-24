@@ -12,7 +12,7 @@
 <body>
 <!-- App Wrapper -->
 	<main class="app">
-		<!-- Greeting -->
+		<!-- Greeting & Header -->
         <header class="basic-header">
                 <div class="greeting-name">
                     <p>Hello, </p><p class="name-user-welcome">Sunshine</p>
@@ -20,8 +20,8 @@
                 <div class="nav-container" class="dropdown">
                     <button onclick="dropdownMenu()" class="dropbtn"><img src="images/icons/toggle-icon.png" alt="Toggle Icon"></button>
                     <ul id="myDropdown" class="dropdown-content">
-                        <li><a href="#">Today's Taks</a></li>
-                        <li><a href="#">Groups</a></li>
+                        <li><a href="/index-main.html">Today's Taks</a></li>
+                        <li><a href="pages/groups-display.html">Groups</a></li>
                         <li><a href="#">Habits</a></l>
                         <li><a href="#">The Garden</a></li>
                         <li><a href="#">Setting</a></li>
@@ -43,20 +43,18 @@
 			    <div class="list-item-container">
                     <div id="list-box-structure">
                         <div id="todo-first-line">
-                            <div id="todo-line-task">
                                 <label class="checkbox-container">
                                     <input type="checkbox">
                                     <span class="checkmark"></span>
                                 </label>
                                 <h4 id="task-item-text">Organize my day</h4>
-                            </div>
                         </div>
                         <p id="description-item-text">Write a description</p>
                         <p id="group-task-item">Work</p>
                     </div>
                     <div id="todo-line-icons"> 
-                        <img id="edit-icon" src="images/icons/edit-icon.png" alt="edit-icon">
-                        <img id="delete-icon" src="images/icons/delete-icon.png" alt="delete-icon">
+                        <img onclick="editTask(this)" id="edit-icon" src="images/icons/edit-icon.png" alt="edit-icon">
+                        <img onclick="deleteTask(this)" id="delete-icon" src="images/icons/delete-icon.png" alt="delete-icon">
                     </div>
                 </div>
             </div>
@@ -68,7 +66,7 @@
                 id="task-form"
                 type="text" 
                 placeholder="¿What are you planning?"
-                name="task-form"/><p id="msg-task-form"></p>
+                name="task-form" required /><p id="msg-task-form"></p>
                 <input 
                 id="description-form"
                 type="text" 
@@ -101,5 +99,6 @@
         </div>
     </footer>
     <script src="javascript/script-main.js"></script>
+    <script src="javascript/menu.js"></script>
 </body>
 </html>
