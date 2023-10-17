@@ -25,6 +25,11 @@ let taskFormValidation = () => {
         console.log("success");
         msgTaskInput.innerHTML = "";
         acceptData();
+        addToDoBotton.setAttribute("data-bs-dismiss", "form");
+        addToDoBotton.click();
+            (() => {
+            addToDoBotton.setAttribute("data-bs-dismiss", "");
+            })();
     }
 };
 
@@ -34,42 +39,70 @@ let taskFormValidation = () => {
     */
 
 
-let data = {};
+let data = [];
 
 let acceptData = () => {
-    data["text"] = textInput.value;
-    data["description"] = descriptionInput.value;
-    data["group"] = groupSelection.value;
-    createTasks();
+  data.push({
+    text: textInput.value,
+    description: descriptionInput.value,
+    group: groupSelection.value,
+  });
+
+  localStorage.setItem("data", JSON.stringify(data));
+
+  console.log(data);
+
+  createTasks();
 };
 
 let createTasks = () => {
-    tasks.innerHTML += `
-    <div class="list-item-container">
-        <div id="list-box-structure">
+    tasks.innerHTML = "";
+    data.map((x, y) => {
+      return (tasks.innerHTML += `
+        <div id=${y} class="list-item-container">
+            <div id="list-box-structure">
             <div id="todo-first-line">
                 <label class="checkbox-container">
                     <input type="checkbox">
                     <span class="checkmark"></span>
                 </label>
-                <h4 id="task-item-text">${data.text}</h4>
+                <h4 id="task-item-text">${x.text}</h4>
             </div>
-            <p id="description-item-text">${data.description}</p>
-            <p id="group-task-item">${data.group}</p>
+            <p id="description-item-text">${x.description}</p>
+            <p id="group-task-item">${x.group}</p>
+            </div>
+            <div id="todo-line-icons"> 
+                <img onclick="editTask(this)" data-bs-toggle="form" data-bs-target="#form" id="edit-icon" src="images/icons/edit-icon.png" alt="edit-icon">
+                <img onclick="deleteTask(this)" id="delete-icon" src="images/icons/delete-icon.png" alt="delete-icon">
+            </div>
         </div>
-        <div id="todo-line-icons"> 
-            <img id="edit-icon" src="images/icons/edit-icon.png" alt="edit-icon">
-            <img onclick="deleteTask(this)" id="delete-icon" src="images/icons/delete-icon.png" alt="delete-icon">
-        </div>
-    </div>
-    `;
-    
+      `);
+    });
+  
     resetForm();
-};
+  };
+
+
+
 
 let deleteTask = (e) =>{
     e.parentElement.parentElement.remove();
+    data.splice(e.parentElement.parentElement.id, 1);
+    localStorage.setItem("data", JSON.stringify(data));
+    console.log(data);
 };
+
+let editTask = (e) => {
+    let taskTitleDetail = document.getElementById("task-item-text");
+    let taskDescriptionDetail = document.getElementById("description-item-text");
+    let taskGroupDetail = document.getElementById("group-task-item");
+  
+    textInput.value = taskTitleDetail.innerHTML;
+    descriptionInput.value = taskDescriptionDetail.innerHTML;
+    groupSelection.value = taskGroupDetail.innerHTML;
+  
+    deleteTask(e);
+  };
 
 let resetForm = ()=>{
     textInput.value = textInput.placeholder;
@@ -77,21 +110,3 @@ let resetForm = ()=>{
     groupSelection.value  = " ";
 };
 
-
-/*  Dropdown menu */
-function dropdownMenu() {
-    document.getElementById("myDropdown").classList.toggle("show");
-};
-
-window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-        }
-        }
-    }
-};

@@ -53,7 +53,7 @@
                         <p id="group-task-item">Work</p>
                     </div>
                     <div id="todo-line-icons"> 
-                        <img onclick="editTask(this)" id="edit-icon" src="images/icons/edit-icon.png" alt="edit-icon">
+                        <img onclick= "editTask(this)" data-bs-toggle="form" data-bs-target="#form" id="edit-icon" src="images/icons/edit-icon.png" alt="edit-icon">
                         <img onclick="deleteTask(this)" id="delete-icon" src="images/icons/delete-icon.png" alt="delete-icon">
                     </div>
                 </div>
@@ -78,7 +78,7 @@
                     <option value="Launch Website">Launch Website</option>
                     <option value="Organize Homework">Organize Homework</option>
                 </select>
-				<button type="submit" id="add-todo"> Add To Do</button>
+				<button type="submit" id="add-todo" data-bs-dismiss="form"> Add To Do</button>
             </form>
 		</section>
 		<!-- End of Todo List -->
